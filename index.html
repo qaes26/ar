@@ -1,0 +1,1479 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>مهارات اللغة العربية - إعداد الطالب: قيس طلال الجازي</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    :root {
+      --bg-gradient: radial-gradient(circle at top, #dbeafe, #f3f4f6 55%, #e5e7eb);
+      --page-bg: #ffffff;
+      --accent: #2563eb;
+      --accent-soft: #dbeafe;
+      --accent-dark: #1d4ed8;
+      --text-main: #111827;
+      --text-muted: #6b7280;
+      --shadow-page: 0 18px 40px rgba(15,23,42,0.22);
+      --radius-page: 14px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Tahoma, sans-serif;
+      background: var(--bg-gradient);
+      color: var(--text-main);
+      line-height: 1.8;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    /* ثيم أسود */
+    body.theme-black {
+      --bg-gradient: radial-gradient(circle at top, #020617, #020617 55%, #020617);
+      --page-bg: #020617;
+      --accent: #f59e0b;
+      --accent-soft: rgba(249, 115, 22, 0.18);
+      --accent-dark: #f97316;
+      --text-main: #e5e7eb;
+      --text-muted: #9ca3af;
+      --shadow-page: 0 20px 45px rgba(0,0,0,0.7);
+    }
+
+    /* ثيم ذهبي */
+    body.theme-gold {
+      --bg-gradient: radial-gradient(circle at top, #fef3c7, #fffbeb 55%, #f5f5f4);
+      --page-bg: #fffbeb;
+      --accent: #d97706;
+      --accent-soft: #fef3c7;
+      --accent-dark: #b45309;
+      --text-main: #1f2937;
+      --text-muted: #6b7280;
+      --shadow-page: 0 18px 38px rgba(146,64,14,0.25);
+    }
+
+    /* ثيم أحمر */
+    body.theme-red {
+      --bg-gradient: radial-gradient(circle at top, #fee2e2, #fef2f2 55%, #fee2e2);
+      --page-bg: #ffffff;
+      --accent: #dc2626;
+      --accent-soft: #fee2e2;
+      --accent-dark: #b91c1c;
+      --text-main: #111827;
+      --text-muted: #6b7280;
+      --shadow-page: 0 18px 40px rgba(185,28,28,0.3);
+    }
+
+    /* ثيم أخضر */
+    body.theme-green {
+      --bg-gradient: radial-gradient(circle at top, #bbf7d0, #ecfdf5 55%, #e5f9f0);
+      --page-bg: #ecfdf5;
+      --accent: #16a34a;
+      --accent-soft: #bbf7d0;
+      --accent-dark: #15803d;
+      --text-main: #052e16;
+      --text-muted: #4b5563;
+      --shadow-page: 0 18px 38px rgba(22,163,74,0.28);
+    }
+
+    /* ثيم بنفسجي */
+    body.theme-purple {
+      --bg-gradient: radial-gradient(circle at top, #ede9fe, #f5f3ff 55%, #e0e7ff);
+      --page-bg: #f5f3ff;
+      --accent: #7c3aed;
+      --accent-soft: #ddd6fe;
+      --accent-dark: #5b21b6;
+      --text-main: #111827;
+      --text-muted: #6b7280;
+      --shadow-page: 0 18px 40px rgba(91,33,182,0.28);
+    }
+
+    /* ثيم تركوازي */
+    body.theme-teal {
+      --bg-gradient: radial-gradient(circle at top, #ccfbf1, #ecfeff 55%, #e0f2fe);
+      --page-bg: #ecfeff;
+      --accent: #0d9488;
+      --accent-soft: #ccfbf1;
+      --accent-dark: #0f766e;
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      --shadow-page: 0 18px 40px rgba(15,118,110,0.28);
+    }
+
+    /* ثيم وردي */
+    body.theme-pink {
+      --bg-gradient: radial-gradient(circle at top, #ffe4e6, #fdf2f8 55%, #fee2e2);
+      --page-bg: #fdf2f8;
+      --accent: #db2777;
+      --accent-soft: #ffe4e6;
+      --accent-dark: #be185d;
+      --text-main: #831843;
+      --text-muted: #6b7280;
+      --shadow-page: 0 18px 40px rgba(190,24,93,0.28);
+    }
+
+    .app {
+      max-width: 1060px;
+      margin: 0 auto;
+      padding: 12px 10px 30px;
+    }
+
+    header.app-header {
+      background: linear-gradient(135deg, var(--accent-dark), var(--accent));
+      color: #fff;
+      padding: 18px 16px 20px;
+      border-radius: 0 0 18px 18px;
+      box-shadow: 0 14px 30px rgba(15,23,42,0.35);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .app-header h1 {
+      margin: 0 0 4px;
+      font-size: 1.35rem;
+    }
+
+    .app-header p {
+      margin: 2px 0;
+      font-size: 0.92rem;
+    }
+
+    .badge-student {
+      margin-top: 4px;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .header-note {
+      font-size: 0.85rem;
+      color: #e5e7eb;
+    }
+
+    main {
+      margin-top: 14px;
+    }
+
+    .page-shell {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .page-toolbar {
+      width: 100%;
+      max-width: 880px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      font-size: 0.88rem;
+      flex-wrap: wrap;
+    }
+
+    .page-toolbar button {
+      border-radius: 999px;
+      border: none;
+      padding: 6px 12px;
+      font-size: 0.86rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--accent-soft);
+      color: var(--accent-dark);
+      white-space: nowrap;
+      transition: background 0.2s ease, transform 0.1s ease, color 0.2s ease;
+    }
+
+    .page-toolbar button:hover:not(:disabled) {
+      background: rgba(255,255,255,0.7);
+      transform: translateY(-1px);
+    }
+
+    .page-toolbar button:disabled {
+      opacity: 0.45;
+      cursor: default;
+      transform: none;
+    }
+
+    .page-toolbar button.primary {
+      background: var(--accent-dark);
+      color: #fff;
+    }
+
+    .page-toolbar button.primary:hover:not(:disabled) {
+      background: var(--accent);
+    }
+
+    .page-toolbar button span.icon {
+      font-size: 0.9rem;
+    }
+
+    .page-summary {
+      flex: 1;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.82rem;
+    }
+
+    .page-indicator {
+      font-size: 0.86rem;
+      white-space: nowrap;
+    }
+
+    .theme-btn {
+      background: linear-gradient(135deg, var(--accent), var(--accent-dark)) !important;
+      color: #fff !important;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    .theme-btn:hover {
+      filter: brightness(1.05);
+    }
+
+    .pages-frame {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+
+    .page {
+      width: 100%;
+      max-width: 880px;
+      background: var(--page-bg);
+      border-radius: var(--radius-page);
+      box-shadow: var(--shadow-page);
+      padding: 16px 18px 20px;
+      border: 1px solid rgba(229,231,235,0.8);
+      position: relative;
+      min-height: 420px;
+      transition: background 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    }
+
+    .page::before {
+      content: "";
+      position: absolute;
+      inset: 8px 10px auto auto;
+      height: 5px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #fee2e2, #bfdbfe, #bbf7d0);
+      opacity: 0.45;
+    }
+
+    .page-header {
+      border-bottom: 1px solid #e5e7eb;
+      padding-bottom: 6px;
+      margin-bottom: 8px;
+    }
+
+    .page-title {
+      margin: 0;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    body.theme-black .page-title {
+      color: #e5e7eb;
+    }
+
+    .page-subtitle {
+      margin: 2px 0 0;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .page-body h3 {
+      font-size: 0.96rem;
+      margin: 8px 0 4px;
+      color: #111827;
+    }
+
+    .page-body h4 {
+      font-size: 0.9rem;
+      margin: 6px 0 3px;
+      color: #111827;
+    }
+
+    body.theme-black .page-body h3,
+    body.theme-black .page-body h4 {
+      color: #e5e7eb;
+    }
+
+    .page-body p {
+      margin: 4px 0;
+      font-size: 0.9rem;
+      color: var(--text-main);
+    }
+
+    .page-body ul {
+      margin: 4px 0 6px;
+      padding-right: 18px;
+      font-size: 0.9rem;
+      color: var(--text-main);
+    }
+
+    .page-body li {
+      margin-bottom: 3px;
+    }
+
+    .example-box {
+      border-radius: 11px;
+      background: #f1f5f9;
+      border: 1px solid #e5e7eb;
+      padding: 7px 9px;
+      font-size: 0.88rem;
+      margin: 6px 0;
+    }
+
+    body.theme-black .example-box {
+      background: #020617;
+      border-color: #111827;
+    }
+
+    .example-box .ex-title {
+      font-weight: 600;
+      font-size: 0.86rem;
+      margin-bottom: 2px;
+      color: #0f172a;
+    }
+
+    body.theme-black .example-box .ex-title {
+      color: #e5e7eb;
+    }
+
+    .note {
+      border-radius: 11px;
+      background: #fffbeb;
+      border: 1px dashed #f59e0b;
+      padding: 7px 9px;
+      font-size: 0.86rem;
+      color: #92400e;
+      margin: 6px 0;
+    }
+
+    body.theme-black .note {
+      background: #451a03;
+      border-color: #fbbf24;
+      color: #fde68a;
+    }
+
+    .chip {
+      display: inline-block;
+      padding: 2px 7px;
+      border-radius: 999px;
+      background: #eff6ff;
+      color: #1d4ed8;
+      font-size: 0.8rem;
+      margin: 0 1px;
+    }
+
+    body.theme-black .chip {
+      background: #111827;
+      color: #facc15;
+    }
+
+    .pill {
+      display: inline-block;
+      padding: 1px 6px;
+      border-radius: 999px;
+      background: #e5e7eb;
+      font-size: 0.78rem;
+      margin-left: 4px;
+    }
+
+    body.theme-black .pill {
+      background: #111827;
+      color: #e5e7eb;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 4px 18px;
+    }
+
+    .page-dots {
+      margin-top: 8px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 5px;
+    }
+
+    .page-dot {
+      width: 22px;
+      height: 22px;
+      border-radius: 999px;
+      border: none;
+      background: #e5e7eb;
+      font-size: 0.8rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #374151;
+      transition: background 0.2s ease, color 0.2s ease, transform 0.1s ease;
+    }
+
+    .page-dot:hover {
+      transform: translateY(-1px);
+    }
+
+    .page-dot.active {
+      background: var(--accent-dark);
+      color: #fff;
+    }
+
+    .footer-note {
+      margin-top: 12px;
+      font-size: 0.8rem;
+      text-align: center;
+      color: var(--text-muted);
+    }
+
+    @media (max-width: 720px) {
+      .app {
+        padding: 10px 6px 24px;
+      }
+
+      header.app-header {
+        padding-inline: 12px;
+      }
+
+      .page {
+        padding: 12px 12px 16px;
+      }
+
+      .page-toolbar {
+        justify-content: center;
+      }
+
+      .page-summary {
+        order: 3;
+        width: 100%;
+      }
+
+      .page-indicator {
+        order: 4;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="app">
+  <header class="app-header">
+    <h1>مهارات اللغة العربية</h1>
+    <p>من الكلام وأقسامه إلى اسم الفاعل واسم المفعول والمنصوبات</p>
+    <p class="badge-student">إعداد الطالب: قيس طلال الجازي</p>
+    <p class="header-note">صفحات متتالية كأنها كراس مراجعة كامل للجوال والكمبيوتر.</p>
+  </header>
+
+  <main>
+    <div class="page-shell">
+
+      <!-- شريط التحكم -->
+      <div class="page-toolbar">
+        <button id="prevBtn">
+          <span class="icon">←</span>
+          السابق
+        </button>
+
+        <div class="page-summary">
+          انتقل بين الصفحات لتراجع كل وحدة بالتفصيل.
+        </div>
+
+        <!-- زر تغيير الألوان 🎨 -->
+        <button id="themeBtn" class="theme-btn">
+          🎨 لون الموقع: أزرق
+        </button>
+
+        <div class="page-indicator">
+          صفحة <span id="currentPageNum">1</span> من <span id="totalPageNum">11</span>
+        </div>
+
+        <button id="nextBtn" class="primary">
+          التالي
+          <span class="icon">→</span>
+        </button>
+      </div>
+
+      <!-- الصفحات -->
+      <div class="pages-frame">
+        <!-- صفحة 1 -->
+        <article class="page" data-page="1">
+          <div class="page-header">
+            <h2 class="page-title">الصفحة ١: مقدمة + تعريف الكلام</h2>
+            <p class="page-subtitle">ما هو الكلام؟ ولماذا نهتم به في النحو؟</p>
+          </div>
+          <div class="page-body">
+            <h3>١) لماذا ندرس مهارات اللغة العربية؟</h3>
+            <p>
+              هذا الملخص يساعدك على فهم الأساسيات التي تُبنى عليها بقية القواعد:
+              الكلام، أقسام الكلمة، الهمزات، المرفوعات، المشتقات، والمنصوبات.
+              إذا فهمت هذه الصفحات، يصير تعاملك مع أي درس نحو أسهل بكثير.
+            </p>
+
+            <h3>٢) تعريف الكلام في النحو</h3>
+            <p>الكلام في النحو هو: <span class="chip">لفظٌ مفيدٌ يحسن السكوت عليه</span>.</p>
+            <ul>
+              <li><strong>لفظٌ:</strong> أي حروف تُنطق (كلام مسموع أو مكتوب يمكن لفظه).</li>
+              <li><strong>مفيدٌ:</strong> يعطي معنى تامًّا واضحًا لا يحتاج تكملة ليُفهم.</li>
+              <li><strong>يحسن السكوت عليه:</strong> لو سكتَّ بعده فهم السامع فكرة كاملة.</li>
+            </ul>
+
+            <div class="example-box">
+              <div class="ex-title">أمثلة على كلام تامّ (جملة مفيدة):</div>
+              <ul>
+                <li>سافرَ خالدٌ.</li>
+                <li>العلمُ نورٌ.</li>
+                <li>الطالبُ مجتهدٌ.</li>
+                <li>اقتربتِ الساعةُ.</li>
+              </ul>
+            </div>
+
+            <div class="example-box">
+              <div class="ex-title">ألفاظ ليست كلامًا عند النحاة:</div>
+              <ul>
+                <li>إذا … (تحتاج جوابًا: إذا جاء زيدٌ...؟ ماذا حصل؟).</li>
+                <li>لو … (تحتاج جوابًا: لو درستَ...؟ ماذا سيحدث؟).</li>
+                <li>عندَ … (تحتاج مضافًا إليه: عندَ البيتِ، عندَ المسجدِ).</li>
+              </ul>
+              <p>هذه الألفاظ لا تُسمّى "كلامًا" لأنها لا تعطي معنى تامًّا وحدها.</p>
+            </div>
+
+            <h3>٣) أقسام الكلام الثلاثة</h3>
+            <p>كل كلمة عربية لا تخرج عن واحد من هذه الأقسام:</p>
+            <ul>
+              <li><strong>اسم</strong></li>
+              <li><strong>فعل</strong></li>
+              <li><strong>حرف</strong></li>
+            </ul>
+            <p>وسنرى في الصفحات القادمة تعريف كل قسم وعلاماته بالتفصيل.</p>
+          </div>
+        </article>
+
+        <!-- صفحة 2 -->
+        <article class="page" data-page="2" style="display:none">
+          <div class="page-header">
+            <h2 class="page-title">الصفحة ٢: الاسم – تعريفه وأنواعه وعلاماته</h2>
+            <p class="page-subtitle">كيف نعرف أن الكلمة اسم؟</p>
+          </div>
+          <div class="page-body">
+            <h3>١) تعريف الاسم</h3>
+            <p>
+              <strong>الاسم:</strong> ما دلّ على معنى في نفسه، ولم يقترن بزمن معيّن.
+            </p>
+            <p>كل كلمة تُسمّي: إنسانًا، حيوانًا، جمادًا، مكانًا، زمانًا، صفة، معنى… فهي اسم.</p>
+            <h4>أمثلة على أسماء محسوسة:</h4>
+            <ul>
+              <li>رجل، امرأة، طفل، شجرة، بيت، سيارة، دفتر، جامعة.</li>
+            </ul>
+            <h4>أمثلة على أسماء معنوية:</h4>
+            <ul>
+              <li>صبر، عدالة، حرّية، إيمان، عقل، فهم، محبّة.</li>
+            </ul>
+
+            <h3>٢) علامات الاسم</h3>
+            <p>هناك علامات إذا قبلتها الكلمة، فهي اسم غالبًا:</p>
+            <ul>
+              <li>
+                <strong>١- النداء:</strong> إذا قُبلت مع "يا" فهي اسم:
+                <ul>
+                  <li>يا محمدُ، يا طالبُ، يا معلّمُ، يا رجلُ.</li>
+                </ul>
+              </li>
+              <li>
+                <strong>٢- التنوين:</strong> نون ساكنة تُنطق ولا تُكتب غالبًا:
+                <ul>
+                  <li>كتابٌ، رجلًا، قلمٍ، مسلمٌ، مؤمناتٍ.</li>
+                </ul>
+              </li>
+              <li>
+                <strong>٣- الجر:</strong> إما بحرف جر أو بالإضافة:
+                <ul>
+                  <li>مررتُ <strong>بزيدٍ</strong>. (زيدٍ: اسم مجرور بحرف الجر).</li>
+                  <li>كتابُ الطالبِ. (الطالبِ: اسم مجرور بالإضافة).</li>
+                </ul>
+              </li>
+              <li>
+                <strong>٤- (أل) التعريف:</strong>
+                <ul>
+                  <li>الطالب، المعلم، البيت، الكتاب، الهواء.</li>
+                </ul>
+              </li>
+              <li>
+                <strong>٥- الإسناد:</strong> أن تُسند إليها خبر أو فعل:
+                <ul>
+                  <li>العلمُ <strong>نورٌ</strong>. (العلم: اسم أُسنِد إليه الخبر).</li>
+                  <li>سافرَ <strong>خالدٌ</strong>. (خالد: فاعل).</li>
+                </ul>
+              </li>
+            </ul>
+
+            <div class="note">
+              ليست كل علامة يجب أن تجتمع، يكفي وجود علامة واحدة قوية (مثل التنوين أو الجر) للحكم أن الكلمة "اسم".
+            </div>
+          </div>
+        </article>
+
+        <!-- صفحة 3 -->
+        <article class="page" data-page="3" style="display:none">
+          <div class="page-header">
+            <h2 class="page-title">الصفحة ٣: الفعل والحرف – التعريف والعلامات</h2>
+            <p class="page-subtitle">كيف تميّز الفعل؟ ومتى تكون الكلمة حرفًا؟</p>
+          </div>
+          <div class="page-body">
+            <h3>١) تعريف الفعل</h3>
+            <p>
+              <strong>الفعل:</strong> ما دلّ على <strong>حدث</strong> مقترن بـ<strong>زمن</strong>.
+            </p>
+            <ul>
+              <li><strong>ماضٍ:</strong> كتبَ، ذهبَ، نجحَ (حدث في زمن مضى).</li>
+              <li><strong>مضارع:</strong> يكتبُ، يذهبُ، ينجحُ (حدث يقع الآن أو في المستقبل القريب).</li>
+              <li><strong>أمر:</strong> اكتبْ، اذهبْ، انجحْ (طلب حصول الفعل في المستقبل).</li>
+            </ul>
+
+            <h3>٢) علامات الفعل</h3>
+            <p>من العلامات التي تميّز الفعل عن غيره:</p>
+            <ul>
+              <li><strong>قد:</strong> تدخل على الماضي والمضارع:
+                <ul>
+                  <li>قد نجحَ الطالبُ. (ماضٍ)</li>
+                  <li>قد ينجحُ المجتهدُ. (مضارع)</li>
+                </ul>
+              </li>
+              <li><strong>السين وسوف:</strong> خاصة بالمضارع:
+                <ul>
+                  <li>سيسافرُ زيدٌ غدًا.</li>
+                  <li>سوف يلعبُ الأطفالُ.</li>
+                </ul>
+              </li>
+              <li><strong>تاء التأنيث الساكنة:</strong> تلحق الفعل الماضي:
+                <ul>
+                  <li>نجحتْ هندٌ.</li>
+                  <li>سقطتْ الشجرةُ.</li>
+                  <li>كتبتْ الطالبةُ الواجبَ.</li>
+                </ul>
+              </li>
+              <li><strong>تاء الفاعل:</strong> ضمير متصل بالفعل الماضي:
+                <ul>
+                  <li>نجحتُ، قرأتَ، كتبتِ، فهمتُ.</li>
+                </ul>
+              </li>
+              <li><strong>نون التوكيد:</strong> تلحق الفعل المضارع:
+                <ul>
+                  <li>ليكتبنَّ، لتدرسنَّ، ليجتهدنَّ.</li>
+                </ul>
+              </li>
+              <li><strong>ياء المخاطبة:</strong> تلحق فعل الأمر للمخاطبة المؤنثة:
+                <ul>
+                  <li>ادرسي، اكتبي، احفظي، استمعي.</li>
+                </ul>
+              </li>
+            </ul>
+
+            <h3>٣) تعريف الحرف</h3>
+            <p>
+              <strong>الحرف:</strong> ما دلّ على معنى في غيره، ولا يقبل علامات الاسم ولا الفعل.
+            </p>
+            <h4>أمثلة على الحروف:</h4>
+            <ul>
+              <li>من، إلى، عن، على، في، الباء، الكاف، اللام.</li>
+              <li>هل، بل، ثم، أو، لكن، إنْ، لم، لن.</li>
+            </ul>
+
+            <div class="note">
+              إذا جرّبت على الكلمة علامات الاسم فلم تقبل، وجرّبت عليها علامات الفعل فلم تقبل،
+              فالغالب أنها حرف.
+            </div>
+          </div>
+        </article>
+
+        <!-- صفحة 4 -->
+        <article class="page" data-page="4" style="display:none">
+          <div class="page-header">
+            <h2 class="page-title">الصفحة ٤: الهمزة (١) – همزة الوصل</h2>
+            <p class="page-subtitle">مقدمة صوتية + مواضع همزة الوصل</p>
+          </div>
+          <div class="page-body">
+            <h3>١) لمحة عن الهمزة</h3>
+            <p>
+              الهمزة صوتٌ شديد يخرج من الحنجرة، ويُكتب في العربية على صورة (ء) فوق أو تحت الألف، أو على الواو، أو على الياء (نبرة)، أو على السطر.
+            </p>
+            <p>وتنقسم من حيث النطق في أول الكلمة إلى نوعين أساسيين:</p>
+            <ul>
+              <li><strong>همزة وصل.</strong></li>
+              <li><strong>همزة قطع.</strong></li>
+            </ul>
+
+            <h3>٢) تعريف همزة الوصل</h3>
+            <p>
+              هي همزة تُنطق في <strong>ابتداء الكلام</strong> فقط، وتسقط في <strong>الدرج (الوصل)</strong> إذا سبقتها كلمة أخرى.
+              وتُكتب ألفًا بلا رأس (ء): <span class="chip">ا</span>.
+            </p>
+
+            <h3>٣) مواضع همزة الوصل الأساسية</h3>
+            <ul>
+              <li><strong>أولًا – في (أل) التعريف:</strong>
+                <ul>
+                  <li>الكتاب، الطالب، المسجد، القمر، الرجل.</li>
+                </ul>
+              </li>
+              <li><strong>ثانيًا – في الأسماء السماعية المشهورة:</strong>
+                <ul>
+                  <li>ابن، ابنة، اسم، ابنم، امرؤ، امرأة، اثنان، اثنتان، ايمن الله.</li>
+                </ul>
+              </li>
+              <li><strong>ثالثًا – في أفعال معينة:</strong>
+                <ul>
+                  <li><strong>أمر الفعل الثلاثي:</strong> اكتبْ، اجلسْ، اسمعْ، اضربْ.</li>
+                  <li><strong>الماضي الخماسي والسداسي وأمرهما:</strong> انتصرَ – انتصرْ، اجتمعَ – اجتمعْ، استغفرَ – استغفرْ، استخرجَ – استخرجْ.</li>
+                </ul>
+              </li>
+              <li><strong>رابعًا – في مصادر الأفعال الخماسية والسداسية:</strong>
+                <ul>
+                  <li>انتصار، اجتماع، ابتسام، استغفار، استخراج، استقبال.</li>
+                </ul>
+              </li>
+            </ul>
+
+            <div class="example-box">
+              <div class="ex-title">توضيح النطق في الوصل والابتداء:</div>
+              <p><strong>ابتداءً:</strong> استغفرَ ربَّه – تنطق الهمزة.</p>
+              <p><strong>وصلاً:</strong> و<strong>استغفرَ</strong> ربَّه – لا تُسمع الهمزة.</p>
+            </div>
+
+            <div class="note">
+              تُحذف همزة الوصل من كلمة <strong>اسم</strong> في البسملة الكاملة: <strong>بسم الله الرحمن الرحيم</strong>.
+            </div>
+          </div>
+        </article>
+
+        <!-- صفحة 5 -->
+        <article class="page" data-page="5" style="display:none">
+          <div class="page-header">
+            <h2 class="page-title">الصفحة ٥: الهمزة (٢) – همزة القطع والمتوسطة والمتطرفة</h2>
+            <p class="page-subtitle">مواضع همزة القطع + قواعد الهمزة في الوسط والآخر</p>
+          </div>
+          <div class="page-body">
+            <h3>١) تعريف همزة القطع</h3>
+            <p>
+              همزة تُنطق في <strong>ابتداء الكلام ووصله</strong> دائمًا، وتُكتب برأس (ء) على الألف أو الواو أو الياء (نبرة) أو على السطر.
+            </p>
+
+            <h3>٢) مواضع همزة القطع</h3>
+            <ul>
+              <li><strong>في الأسماء:</strong>
+                <ul>
+                  <li>أحمد، إبراهيم، إنسان، أرض، إيمان، أطفال.</li>
+                  <li>معظم الأسماء همزتها قطع، ما عدا الأسماء السماعية التي همزتها وصل (ابن، اسم…).</li>
+                </ul>
+              </li>
+              <li><strong>في الأفعال:</strong>
+                <ul>
+                  <li>الماضي الثلاثي المبدوء بهمزة: أخذ، أكل، أمر.</li>
+                  <li>الماضي والأمر من الرباعي المبدوء بهمزة: أكرم – أكرِم، أحسن – أحسِن.</li>
+                  <li>كل مضارع مبدوء بهمزة: أكتب، أقرأ، أستغفر.</li>
+                </ul>
+              </li>
+              <li><strong>في الحروف:</strong>
+                <ul>
+                  <li>إن، أن، أو، أم، إلى، إلا، إذا، ألا… (ما عدا "أل" التعريف فهي وصل).</li>
+                </ul>
+              </li>
+            </ul>
+
+            <h3>٣) الهمزة المتطرفة (في آخر الكلمة)</h3>
+            <p>تُكتب حسب حركة <strong>الحرف الذي قبلها فقط</strong>:</p>
+            <ul>
+              <li>قبلها فتحة → على ألف: قرأ، نشأ، بدأ، لجأ.</li>
+              <li>قبلها ضمة → على واو: تباطؤ، لؤلؤ، تبوُّء.</li>
+              <li>قبلها كسرة → على ياء (نبرة): شاطئ، قارئ، مبادِئ.</li>
+              <li>قبلها سكون → على السطر: جزء، شيء، هدوء، ضوء.</li>
+            </ul>
+
+            <h3>٤) الهمزة المتوسطة (في وسط الكلمة)</h3>
+            <p>القاعدة الذهبية: ننظر إلى <strong>حركة الهمزة</strong> و<strong>حركة ما قبلها</strong>، ثم نختار الكرسي حسب <strong>أقوى الحركتين</strong>:</p>
+            <p><span class="chip">الكسرة &gt; الضمة &gt; الفتحة &gt; السكون</span></p>
+            <ul>
+              <li><strong>أقوى الحركات الكسرة → على ياء (نبرة):</strong>
+                <ul>
+                  <li>سُئِل، سَئِم، فئة، بيئة، مِئذنة.</li>
+                </ul>
+              </li>
+              <li><strong>أقوى الحركات الضمة → على واو:</strong>
+                <ul>
+                  <li>يؤمن، مؤمن، مؤونة، سؤال.</li>
+                </ul>
+              </li>
+              <li><strong>أقوى الحركات الفتحة → على ألف:</strong>
+                <ul>
+                  <li>سَأَل، تأثر، تألّف، يأكل.</li>
+                </ul>
+              </li>
+              <li><strong>السكون:</strong> عند السكون قد تُكتب على السطر بحسب التركيب:
+                <ul>
+                  <li>قراءة، تفاؤل، مِرآة.</li>
+                </ul>
+              </li>
+            </ul>
+
+            <div class="note">
+              تلخيص سريع:
+              <br>بداية الكلمة: إمّا وصل (ا) أو قطع (أ/إ).
+              <br>وسط الكلمة: نختار الكرسي حسب أقوى الحركتين.
+              <br>آخر الكلمة: ننظر لحركة الحرف السابق فقط.
+            </div>
+          </div>
+        </article>
+
+        <!-- صفحة 6 -->
+        <article class="page" data-page="6" style="display:none">
+          <div class="page-header">
+            <h2 class="page-title">الصفحة ٦: المرفوعات (١) – المبتدأ</h2>
+            <p class="page-subtitle">تعريف المبتدأ وأنواعه</p>
+          </div>
+          <div class="page-body">
+            <h3>١) ما هي المرفوعات؟</h3>
+            <p>
+              المرفوعات هي الأسماء (وأحيانًا الأفعال المضارعة) التي تكون علامة إعرابها الأصلية
+              <strong>الضمة</strong> أو ما ينوب عنها (الواو، الألف).
+            </p>
+            <p>من أهم المرفوعات في هذا الملخص:</p>
+            <ul>
+              <li>المبتدأ.</li>
+              <li>الخبر.</li>
+              <li>اسم كان وأخواتها.</li>
+              <li>خبر إن وأخواتها.</li>
+              <li>الفاعل.</li>
+              <li>نائب الفاعل.</li>
+            </ul>
+
+            <h3>٢) المبتدأ</h3>
+            <p><strong>تعريفه:</strong> اسم مرفوع، مجرد من العوامل اللفظية، نُخبر عنه بخبر.</p>
+            <div class="example-box">
+              <div class="ex-title">أمثلة:</div>
+              <ul>
+                <li>اللهُ غفورٌ رحيمٌ.</li>
+                <li>العلمُ نافعٌ.</li>
+                <li>الصلاةُ واجبةٌ.</li>
+                <li>الصبرُ جميلٌ.</li>
+              </ul>
+            </div>
+
+            <h4>أشكال المبتدأ:</h4>
+            <ul>
+              <li><strong>اسم صريح ظاهر:</strong> العلمُ، الطالبُ، الجوُّ…</li>
+              <li><strong>ضمير:</strong> أنتَ ناجحٌ، نحنُ مخلصون.</li>
+              <li><strong>اسم إشارة:</strong> هذا طالبٌ مجتهدٌ.</li>
+              <li><strong>اسم موصول:</strong> الذي يَجتهدُ ناجحٌ.</li>
+              <li><strong>مصدر مؤوَّل من أن والفعل:</strong> أن تدرسَ خيرٌ لك. (أن تدرس: في تأويل مصدر "دراستك").</li>
+            </ul>
+
+            <h4>المبتدأ نكرة أم معرفة؟</h4>
+            <p>الأصل أن يكون المبتدأ معرفة، لكن قد يأتي نكرة مع وجود "مسوّغ" مثل:</p>
+            <ul>
+              <li>تقدُم الخبر شبه جملة:
+                <ul>
+                  <li>في البيتِ رجلٌ.</li>
+                  <li>عندَ البابِ طالبٌ.</li>
+                </ul>
+              </li>
+              <li>أن يكون موصوفًا:
+                <ul>
+                  <li>رجلٌ صالحٌ محبوبٌ.</li>
+                </ul>
+              </li>
+              <li>أن يكون مضافًا:
+                <ul>
+                  <li>كتابُ طالبٍ نافعٌ.</li>
+                </ul>
+              </li>
+              <li>أن يأتي في سياق استفهام أو نفي:
+                <ul>
+                  <li>هل رجلٌ في البيت؟</li>
+                  <li>ما أحدٌ في القاعة.</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- صفحة 7 -->
+        <article class="page" data-page="7" style="display:none">
+          <div class="page-header">
+            <h2 class="page-title">الصفحة ٧: المرفوعات (٢) – الخبر، إن وأخواتها، كان وأخواتها</h2>
+            <p class="page-subtitle">أنواع الخبر + عمل إنَّ وكانَ</p>
+          </div>
+          <div class="page-body">
+            <h3>١) الخبر</h3>
+            <p><strong>تعريفه:</strong> الجزء الذي يتمّم معنى المبتدأ ويُخبر عنه بحكمٍ أو صفة.</p>
+            <h4>أنواع الخبر:</h4>
+            <ul>
+              <li><strong>خبر مفرد:</strong> كلمة واحدة ليست جملة ولا شبه جملة:
+                <ul>
+                  <li>الطالبُ <strong>مجتهدٌ</strong>.</li>
+                  <li>المؤمنون <strong>صادقون</strong>.</li>
+                </ul>
+              </li>
+              <li><strong>خبر جملة:</strong>
+                <ul>
+                  <li>جملة فعلية: الطلابُ <strong>يحفظون القرآنَ</strong>.</li>
+                  <li>جملة اسمية: الجوُّ <strong>هو المعتدلُ اليومَ</strong>.</li>
+                </ul>
+                <p>يشترط أن تحتوي الجملة على ضمير يعود على المبتدأ (يسمّى رابطًا).</p>
+              </li>
+              <li><strong>خبر شبه جملة:</strong> ظرف أو جار ومجرور:
+                <ul>
+                  <li>العلمُ <strong>في الكتبِ</strong>.</li>
+                  <li>الرحلةُ <strong>غدًا</strong>.</li>
+                </ul>
+              </li>
+            </ul>
+
+            <div class="note">
+              الأصل أن يتقدّم المبتدأ ويتأخّر الخبر، لكن يجوز تقديم الخبر في حالات خاصة
+              (خاصة إذا كان شبه جملة والمبتدأ نكرة).
+            </div>
+
+            <h3>٢) إن وأخواتها</h3>
+            <p>حروف ناسخة تدخل على الجملة الاسمية، فتنصب المبتدأ وترفع الخبر.</p>
+            <ul>
+              <li><strong>إنَّ / أنَّ:</strong> للتوكيد:
+                <ul>
+                  <li>إنَّ اللهَ غفورٌ رحيمٌ.</li>
+                  <li>علمتُ أنَّ النجاحَ قريبٌ.</li>
+                </ul>
+              </li>
+              <li><strong>كأنَّ:</strong> للتشبيه:
+                <ul>
+                  <li>كأنَّ الطالبَ أسدٌ في شجاعته.</li>
+                </ul>
+              </li>
+              <li><strong>لكنَّ:</strong> للاستدراك:
+                <ul>
+                  <li>الجوُّ حارٌّ لكنَّ الماءَ باردٌ.</li>
+                </ul>
+              </li>
+              <li><strong>ليتَ:</strong> للتمنّي:
+                <ul>
+                  <li>ليتَ الشبابَ يعودُ يومًا.</li>
+                </ul>
+              </li>
+              <li><strong>لعلَّ:</strong> للرجاء:
+                <ul>
+                  <li>لعلَّ الامتحانَ سهلٌ.</li>
+                </ul>
+              </li>
+            </ul>
+            <div class="example-box">
+              <div class="ex-title">مثال إعرابي:</div>
+              <p>إنَّ الطالبَ مجتهدٌ.</p>
+              <ul>
+                <li>إنَّ: حرف توكيد ونصب.</li>
+                <li>الطالبَ: اسم إنَّ منصوب.</li>
+                <li>مجتهدٌ: خبر إنَّ مرفوع.</li>
+              </ul>
+            </div>
+
+            <h3>٣) كان وأخواتها</h3>
+            <p>أفعال ناسخة تدخل على الجملة الاسمية، فترفع المبتدأ وتنصب الخبر.</p>
+            <h4>من أفعال كان وأخواتها ومعانيها:</h4>
+            <ul>
+              <li><strong>كان:</strong> تدل غالبًا على حصول الصفة في الماضي: كان الجوُّ جميلًا.</li>
+              <li><strong>أصبح:</strong> تدل على الصباح أو الدخول في حال: أصبح الطالبُ نشيطًا.</li>
+              <li><strong>أضحى:</strong> تدل على وقت الضحى.</li>
+              <li><strong>أمسى:</strong> تدل على المساء: أمسى الجوُّ باردًا.</li>
+              <li><strong>ظلَّ:</strong> للاستمرار في النهار: ظلَّ الطالبُ مجتهدًا.</li>
+              <li><strong>بات:</strong> للاستمرار ليلًا: بات المريضُ متألّمًا.</li>
+              <li><strong>صار:</strong> للتحوّل من حال إلى حال: صار الحديدُ فولاذًا.</li>
+              <li><strong>ليس:</strong> للنفي: ليسَ المؤمنُ كذّابًا.</li>
+              <li>الأفعال المقترنة بـ "ما": ما زال، ما برح، ما انفك، ما فتئ، وما دام.</li>
+            </ul>
+
+            <div class="example-box">
+              <div class="ex-title">مثال إعرابي:</div>
+              <p>كان الرجلُ صادقًا.</p>
+              <ul>
+                <li>كان: فعل ماضٍ ناقص.</li>
+                <li>الرجلُ: اسم كان مرفوع.</li>
+                <li>صادقًا: خبر كان منصوب.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- صفحة 8 -->
+        <article class="page" data-page="8" style="display:none">
+          <div class="page-header">
+            <h2 class="page-title">الصفحة ٨: الفاعل ونائب الفاعل</h2>
+            <p class="page-subtitle">من يقوم بالفعل؟ ومن ينوب عنه؟</p>
+          </div>
+          <div class="page-body">
+            <h3>١) الفاعل</h3>
+            <p><strong>تعريفه:</strong> اسم مرفوع يأتي بعد فعل تام مبني للمعلوم، ويدل على من قام بالفعل أو اتصف به.</p>
+            <div class="example-box">
+              <div class="ex-title">أمثلة:</div>
+              <ul>
+                <li>كتبَ <strong>الطالبُ</strong> الدرسَ.</li>
+                <li>سقطتِ <strong>الشجرةُ</strong>.</li>
+                <li>ينجحُ <strong>المجتهدُ</strong>.</li>
+              </ul>
+            </div>
+
+            <h4>صور الفاعل:</h4>
+            <ul>
+              <li><strong>اسم ظاهر:</strong> حضرَ محمدٌ.</li>
+              <li><strong>ضمير مستتر:</strong> نجحَ (هو) – الفاعل ضمير مستتر تقديره "هو".</li>
+              <li><strong>ضمير متصل:</strong> ذهبتُ – التاء ضمير في محل رفع فاعل.</li>
+            </ul>
+
+            <h3>٢) بناء الفعل للمجهول</h3>
+            <p>نبني الفعل للمجهول عندما نريد إخفاء الفاعل أو نجهله أو لا نهتم بذكره.</p>
+            <h4>طريقة البناء للمجهول:</h4>
+            <ul>
+              <li><strong>في الماضي:</strong> ضمّ أول الفعل، وكسر ما قبل آخره:
+                <ul>
+                  <li>كتبَ → كُتِب، فتحَ → فُتِح، نصرَ → نُصِر.</li>
+                </ul>
+              </li>
+              <li><strong>في المضارع:</strong> ضمّ أوله، وفتح ما قبل آخره:
+                <ul>
+                  <li>يكتبُ → يُكتَب، ينصرُ → يُنصَر، يفتحُ → يُفتَح.</li>
+                </ul>
+              </li>
+            </ul>
+
+            <h3>٣) نائب الفاعل</h3>
+            <p>
+              هو اسم مرفوع يُذكَر بعد فعل مبني للمجهول، ويحلّ محل الفاعل بعد حذفه.
+            </p>
+            <div class="example-box">
+              <div class="ex-title">أمثلة:</div>
+              <ul>
+                <li>كتبَ الطالبُ الدرسَ → كُتِبَ <strong>الدرسُ</strong>. (الدرسُ: نائب فاعل).</li>
+                <li>فتحَ العاملُ البابَ → فُتِحَ <strong>البابُ</strong>.</li>
+              </ul>
+            </div>
+
+            <h4>ممّ يكون نائب الفاعل؟</h4>
+            <ul>
+              <li>غالبًا من <strong>المفعول به</strong>:
+                <ul>
+                  <li>أكلَ الطفلُ التفاحةَ → أُكِلَتْ التفاحةُ.</li>
+                </ul>
+              </li>
+              <li>وقد يأتي من <strong>الجار والمجرور</strong> أو الظرف إذا لم يوجد مفعول به:
+                <ul>
+                  <li>نُظِرَ إلى <strong>المسجدِ</strong>.</li>
+                  <li>سِيرَ في <strong>الطريقِ</strong>.</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- صفحة 9 -->
+        <article class="page" data-page="9" style="display:none">
+          <div class="page-header">
+            <h2 class="page-title">الصفحة ٩: اسم الفاعل</h2>
+            <p class="page-subtitle">تعريفه – صيغته – عمله مع الأمثلة</p>
+          </div>
+          <div class="page-body">
+            <h3>١) تعريف اسم الفاعل</h3>
+            <p>
+              <strong>اسم الفاعل:</strong> اسم مشتق من الفعل، يدل على من قام بالفعل أو اتصف به.
+            </p>
+            <div class="example-box">
+              <div class="ex-title">أمثلة:</div>
+              <ul>
+                <li>كاتب ← من كتب.</li>
+                <li>قارئ ← من قرأ.</li>
+                <li>حافظ ← من حفظ.</li>
+                <li>نائم ← من نام.</li>
+                <li>مستغفِر ← من يستغفِر.</li>
+              </ul>
+            </div>
+
+            <h3>٢) صياغة اسم الفاعل من الفعل الثلاثي</h3>
+            <p>من الفعل الماضي الثلاثي نضعه على وزن <span class="chip">فاعل</span>:</p>
+            <ul>
+              <li>كتب → كاتِب.</li>
+              <li>جلس → جالِس.</li>
+              <li>فهم → فاهِم.</li>
+              <li>سمع → سامِع.</li>
+            </ul>
+            <p>إذا كان الفعل أجوف (وسطه ألف):</p>
+            <ul>
+              <li>قال → قائل.</li>
+              <li>باع → بائع.</li>
+              <li>نام → نائم.</li>
+            </ul>
+
+            <h3>٣) صياغته من غير الثلاثي</h3>
+            <p>الخطوات:</p>
+            <ol>
+              <li>نأتي بالمضارع المبني للمعلوم: يُكرِم، يُعلِّم، يستغفِر.</li>
+              <li>نحذف حرف المضارعة (الياء أو التاء أو النون).</li>
+              <li>نضع ميمًا مضمومة في أوله.</li>
+              <li>نكسر الحرف الذي قبل الآخر.</li>
+            </ol>
+            <ul>
+              <li>يُكرِم → مُكرِم.</li>
+              <li>يُعلِّم → مُعلِّم.</li>
+              <li>يستغفِر → مُستغفِر.</li>
+            </ul>
+
+            <h3>٤) عمل اسم الفاعل</h3>
+            <p>يعمل عمل فعله في الأحكام الآتية:</p>
+            <ul>
+              <li>يرفع فاعلًا.</li>
+              <li>وينصب مفعولًا به إن كان فعله متعدّيًا.</li>
+            </ul>
+            <p>لكن بشرط أن يكون:</p>
+            <ul>
+              <li>دالًّا على الحال أو الاستقبال.</li>
+              <li>معتمدًا على شيء قبله مثل: مبتدأ، أو نفي، أو استفهام، أو يكون معرّفًا بـ (الـ).</li>
+            </ul>
+
+            <div class="example-box">
+              <div class="ex-title">أمثلة على عمله:</div>
+              <ul>
+                <li>الطالبُ <strong>كاتِبٌ الدرسَ</strong>.
+                  <br>كاتبٌ: اسم فاعل مرفوع، يرفع ضميرًا مستترًا (هو)، وينصب الدرسَ مفعولًا به.</li>
+                <li>ما <strong>ضاربٌ</strong> الأبناءَ إلا العادلُ.
+                  <br>ضاربٌ: اسم فاعل مسبوق بنفي، عمل عمل فعله.</li>
+                <li><strong>أمُجتهدٌ</strong> الطالبُ؟
+                  <br>مجتهد: اسم فاعل معتمد على استفهام.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- صفحة 10 -->
+        <article class="page" data-page="10" style="display:none">
+          <div class="page-header">
+            <h2 class="page-title">الصفحة ١٠: اسم المفعول + مقارنة مع اسم الفاعل</h2>
+            <p class="page-subtitle">تعريفه – صيغته – عمله – مقارنة سريعة</p>
+          </div>
+          <div class="page-body">
+            <h3>١) تعريف اسم المفعول</h3>
+            <p>
+              <strong>اسم المفعول:</strong> اسم مشتق من الفعل، يدل على من وقع عليه الفعل.
+            </p>
+            <div class="example-box">
+              <div class="ex-title">أمثلة:</div>
+              <ul>
+                <li>مكتوب ← ما كُتِب.</li>
+                <li>مفتوح ← ما فُتِح.</li>
+                <li>مكسور ← ما كُسِر.</li>
+                <li>منصور ← من وقع عليه النصر.</li>
+              </ul>
+            </div>
+
+            <h3>٢) صياغة اسم المفعول من الثلاثي</h3>
+            <p>يُصاغ من الفعل الثلاثي على وزن <span class="chip">مفعول</span> غالبًا:</p>
+            <ul>
+              <li>كتب → مكتوب.</li>
+              <li>فتح → مفتوح.</li>
+              <li>أكل → مأكول.</li>
+              <li>نصر → منصور.</li>
+            </ul>
+
+            <h3>٣) صياغته من غير الثلاثي</h3>
+            <p>الخطوات:</p>
+            <ol>
+              <li>نأتي بالمضارع المبني للمجهول: يُكرَم، يُستخرَج، يُنتخَب.</li>
+              <li>نبدل حرف المضارعة بميم مضمومة.</li>
+              <li>نفتح ما قبل الآخر غالبًا.</li>
+            </ol>
+            <ul>
+              <li>يُكرَم → مُكرَم.</li>
+              <li>يُستخرَج → مُستخرَج.</li>
+              <li>يُحترَم → مُحترَم.</li>
+              <li>يُنتخَب → مُنتخَب.</li>
+            </ul>
+
+            <h3>٤) عمل اسم المفعول</h3>
+            <p>يعمل عمل فعله المبني للمجهول:</p>
+            <ul>
+              <li>يرفع <strong>نائب فاعل</strong> بعده.</li>
+            </ul>
+
+            <div class="example-box">
+              <div class="ex-title">أمثلة:</div>
+              <ul>
+                <li>هذا البابُ <strong>مفتوحٌ</strong>.
+                  <br>مفتوح: اسم مفعول، نائب الفاعل ضمير مستتر يعود على الباب (هو).</li>
+                <li><strong>المطلوبُ</strong> الواجباتُ.
+                  <br>المطلوب: اسم مفعول، الواجباتُ: نائب فاعل مرفوع.</li>
+              </ul>
+            </div>
+
+            <h3>٥) مقارنة بين اسم الفاعل واسم المفعول</h3>
+            <ul>
+              <li><strong>في المعنى:</strong>
+                <ul>
+                  <li>اسم الفاعل: من قام بالفعل (كاتب، حافظ، مُكرِم).</li>
+                  <li>اسم المفعول: من وقع عليه الفعل (مكتوب، محفوظ، مُكرَم).</li>
+                </ul>
+              </li>
+              <li><strong>في الصياغة من الثلاثي:</strong>
+                <ul>
+                  <li>اسم الفاعل: فاعِل → كاتِب، حافظ.</li>
+                  <li>اسم المفعول: مفعول → مكتوب، محفوظ.</li>
+                </ul>
+              </li>
+              <li><strong>في العمل:</strong>
+                <ul>
+                  <li>اسم الفاعل: يعمل عمل فعله فيرفع فاعلًا وينصب مفعولًا به (إن كان متعدّيًا).</li>
+                  <li>اسم المفعول: يعمل عمل فعله المبني للمجهول فيرفع نائب فاعل.</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- صفحة 11 -->
+        <article class="page" data-page="11" style="display:none">
+          <div class="page-header">
+            <h2 class="page-title">الصفحة ١١: المنصوبات</h2>
+            <p class="page-subtitle">المفعولات، الحال، التمييز، المنادى، المستثنى</p>
+          </div>
+          <div class="page-body">
+            <h3>١) المفعول به</h3>
+            <p><strong>التعريف:</strong> اسم منصوب يدل على من وقع عليه فعل الفاعل.</p>
+            <ul>
+              <li>قرأَ الطالبُ <strong>الدرسَ</strong>.</li>
+              <li>شربَ زيدٌ <strong>الماءَ</strong>.</li>
+              <li>احترمَ المسلمُ <strong>جارَه</strong>.</li>
+            </ul>
+
+            <h3>٢) المفعول المطلق</h3>
+            <p><strong>التعريف:</strong> مصدر من لفظ الفعل نفسه، منصوب، يُذكر لتوكيد الفعل أو بيان نوعه أو عدده.</p>
+            <ul>
+              <li>للتوكيد: ضربتُه <strong>ضربًا</strong>.</li>
+              <li>لبيان النوع: أحسنتُ إلى والديَّ <strong>إحسانًا عظيمًا</strong>.</li>
+              <li>لبيان العدد: كرّرتُ المحاولةَ <strong>ثلاثَ مرّاتٍ</strong>.</li>
+            </ul>
+            <div class="note">
+              قد ينوب عن المفعول المطلق كلمات مثل: كلّ، بعض، هذا، مرتين، كثيرًا…
+            </div>
+
+            <h3>٣) المفعول لأجله</h3>
+            <p><strong>التعريف:</strong> مصدر منصوب يبيّن سبب حدوث الفعل، وغالبًا يكون مصدرًا قلبيًا (شعور أو نية).</p>
+            <ul>
+              <li>درستُ <strong>رغبةً</strong> في النجاح.</li>
+              <li>سافرَ خالدٌ <strong>طلبًا</strong> للرزق.</li>
+              <li>تصدّقَ الرجلُ <strong>خوفًا</strong> من الفقر.</li>
+            </ul>
+
+            <h3>٤) المفعول فيه (الظرف)</h3>
+            <p><strong>التعريف:</strong> اسم منصوب يبيّن زمان أو مكان وقوع الفعل، ويُسمى ظرفًا.</p>
+            <ul>
+              <li>ظرف زمان (متى؟): سافرتُ <strong>ليلًا</strong>، أستيقظُ <strong>فجرًا</strong>.</li>
+              <li>ظرف مكان (أين؟): جلستُ <strong>تحتَ الشجرةِ</strong>، وقفتُ <strong>أمامَ البيتِ</strong>.</li>
+            </ul>
+
+            <h3>٥) المفعول معه</h3>
+            <p><strong>التعريف:</strong> اسم منصوب يأتي بعد واو المعية (بمعنى: مع) ليدل على من وقع معه الفعل في زمن واحد.</p>
+            <ul>
+              <li>سرتُ <strong>والقمرَ</strong>. (القمرَ: مفعول معه).</li>
+              <li>مشيتُ <strong>والشارعَ</strong> خاليًا.</li>
+            </ul>
+
+            <h3>٦) الحال</h3>
+            <p><strong>التعريف:</strong> اسم نكرة منصوب يبيّن هيئة صاحبه عند وقوع الفعل، وصاحب الحال يكون معرفة.</p>
+            <ul>
+              <li>عادَ الجنودُ <strong>منتصرينَ</strong>.</li>
+              <li>قابلتُ صديقي <strong>مبتسمًا</strong>.</li>
+              <li>دخلَ المعلمُ <strong>غاضبًا</strong>.</li>
+            </ul>
+            <p>قد تأتي الحال مفردة أو جملة أو شبه جملة، لكن في هذا المساق يركّز غالبًا على الحال المفردة.</p>
+
+            <h3>٧) التمييز</h3>
+            <p><strong>التعريف:</strong> اسم نكرة منصوب يفسّر اسمًا مبهمًا قبله أو يوضح نسبة مبهمة في الجملة.</p>
+            <h4>أ) تمييز المفرد (الملفوظ):</h4>
+            <ul>
+              <li>في الفصل عشرون <strong>طالبًا</strong>.</li>
+              <li>اشتريتُ كيلو <strong>سكرٍ</strong>.</li>
+              <li>زرعتُ فدّانًا <strong>قمحًا</strong>.</li>
+            </ul>
+            <h4>ب) تمييز الجملة (الملحوظ):</h4>
+            <ul>
+              <li>ازداد الجوُّ <strong>حرارةً</strong>.</li>
+              <li>اشتعل الرأسُ <strong>شيبًا</strong>.</li>
+              <li>طاب زيدٌ <strong>نفسًا</strong>.</li>
+            </ul>
+
+            <h3>٨) المنادى</h3>
+            <p><strong>التعريف:</strong> اسم يُذكر بعد أداة نداء (يا، أيا، هيا…) لطلب إقباله أو تنبيهه.</p>
+            <ul>
+              <li>يا <strong>محمدُ</strong>، انتبه.</li>
+              <li>يا <strong>رجلُ</strong>، اتقِ الله. (نكرة مقصودة مبنية على الضم).</li>
+              <li>يا <strong>رجلًا</strong>، اتقِ الله. (نكرة غير مقصودة منصوبة).</li>
+              <li>يا <strong>طالبَ العلمِ</strong>، اجتهد. (مضاف: منصوب).</li>
+            </ul>
+
+            <h3>٩) المستثنى</h3>
+            <p><strong>الاستثناء:</strong> إخراج اسم من حكم ما قبله بأداة استثناء أشهرها: <span class="chip">إلا</span>.</p>
+            <div class="example-box">
+              <div class="ex-title">مثال تام مثبت:</div>
+              <ul>
+                <li>نجحَ الطلابُ إلا <strong>خالدًا</strong>. (خالدًا: مستثنى منصوب).</li>
+              </ul>
+            </div>
+            <p>في الاستثناء التام المثبت يكون المستثنى بعد "إلا" منصوبًا وجوبًا.</p>
+          </div>
+        </article>
+      </div>
+
+      <!-- نقاط الصفحات -->
+      <div class="page-dots" id="pageDots"></div>
+
+      <div class="footer-note">
+        هذه الصفحات تلخّص بالتفصيل أهم ما تحتاجه في مهارات اللغة العربية، من إعداد: قيس طلال الجازي.
+      </div>
+    </div>
+  </main>
+</div>
+
+<script>
+  (function () {
+    const pages = Array.from(document.querySelectorAll('.page'));
+    const totalPages = pages.length;
+    const currentPageNumEl = document.getElementById('currentPageNum');
+    const totalPageNumEl = document.getElementById('totalPageNum');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const dotsContainer = document.getElementById('pageDots');
+    const themeBtn = document.getElementById('themeBtn');
+
+    let currentIndex = 0;
+
+    totalPageNumEl.textContent = totalPages.toString();
+
+    // إنشاء نقاط الصفحات
+    pages.forEach((page, idx) => {
+      const dotBtn = document.createElement('button');
+      dotBtn.className = 'page-dot' + (idx === 0 ? ' active' : '');
+      dotBtn.textContent = (idx + 1).toString();
+      dotBtn.addEventListener('click', () => showPage(idx));
+      dotsContainer.appendChild(dotBtn);
+    });
+
+    const dotButtons = Array.from(document.querySelectorAll('.page-dot'));
+
+    function showPage(index) {
+      if (index < 0) index = 0;
+      if (index > totalPages - 1) index = totalPages - 1;
+
+      pages.forEach((p, i) => {
+        p.style.display = i === index ? 'block' : 'none';
+      });
+
+      dotButtons.forEach((btn, i) => {
+        btn.classList.toggle('active', i === index);
+      });
+
+      currentIndex = index;
+      currentPageNumEl.textContent = (currentIndex + 1).toString();
+
+      prevBtn.disabled = currentIndex === 0;
+      nextBtn.disabled = currentIndex === totalPages - 1;
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    prevBtn.addEventListener('click', () => {
+      if (currentIndex > 0) showPage(currentIndex - 1);
+    });
+
+    nextBtn.addEventListener('click', () => {
+      if (currentIndex < totalPages - 1) showPage(currentIndex + 1);
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') {
+        if (currentIndex > 0) showPage(currentIndex - 1);
+      } else if (e.key === 'ArrowRight') {
+        if (currentIndex < totalPages - 1) showPage(currentIndex + 1);
+      }
+    });
+
+    // --- زر تغيير الألوان 🎨 ---
+    const themes = [
+      { id: 'blue',   label: 'أزرق' },
+      { id: 'black',  label: 'أسود' },
+      { id: 'gold',   label: 'ذهبي' },
+      { id: 'red',    label: 'أحمر' },
+      { id: 'green',  label: 'أخضر' },
+      { id: 'purple', label: 'بنفسجي' },
+      { id: 'teal',   label: 'تركوازي' },
+      { id: 'pink',   label: 'وردي' }
+    ];
+    let currentThemeIndex = 0;
+
+    function applyTheme(index) {
+      const theme = themes[index];
+      currentThemeIndex = index;
+
+      document.body.classList.remove(
+        'theme-blue',
+        'theme-black',
+        'theme-gold',
+        'theme-red',
+        'theme-green',
+        'theme-purple',
+        'theme-teal',
+        'theme-pink'
+      );
+
+      if (theme.id !== 'blue') {
+        document.body.classList.add('theme-' + theme.id);
+      }
+
+      themeBtn.textContent = '🎨 لون الموقع: ' + theme.label;
+
+      try {
+        localStorage.setItem('qaes_arabic_theme', theme.id);
+      } catch (e) {
+        // تجاهل إذا المتصفح لا يسمح
+      }
+    }
+
+    // تحميل الثيم المخزّن سابقًا إن وجد
+    (function initTheme() {
+      let saved = null;
+      try {
+        saved = localStorage.getItem('qaes_arabic_theme');
+      } catch (e) {
+        saved = null;
+      }
+      if (saved) {
+        const idx = themes.findIndex(t => t.id === saved);
+        if (idx >= 0) {
+          applyTheme(idx);
+          return;
+        }
+      }
+      applyTheme(0); // أزرق افتراضيًا
+    })();
+
+    themeBtn.addEventListener('click', () => {
+      const nextIndex = (currentThemeIndex + 1) % themes.length;
+      applyTheme(nextIndex);
+    });
+
+    // تأكيد عرض الصفحة الأولى
+    showPage(0);
+  })();
+</script>
+</body>
+</html>
